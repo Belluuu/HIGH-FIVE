@@ -5,16 +5,16 @@ int16_t AcX,AcY,AcZ;
 static unsigned long previousMillis = 0;
 const unsigned long interval = 20;  // Set the interval in milliseconds
 
-void setup(){
+void setup(){  
   Wire.begin();
   Wire.beginTransmission(MPU_addr);
   Wire.write(0x6B);  // PWR_MGMT_1 register
   Wire.write(0);     // set to zero (wakes up the MPU-6050)
-  Wire.endTransmission(true);
-  Serial.begin(9600);
+  Wire.endTransmission(true);  
+  Serial.begin(9600);  // Baud rate
 }
 
-void loop(){
+void loop(){ 
   
   unsigned long currentMillis = millis();
 
